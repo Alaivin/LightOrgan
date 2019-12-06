@@ -4,7 +4,16 @@ const scale = 50;
 const file = document.getElementById('audioFile');
 const audio = document.getElementById('audio');
 
-file.addEventListener('change', () => audio.play());
+const playMusic = () => {
+  audio.play();
+  const context = new AudioContext();
+  const src = context.createMediaElementSource(audio);
+  const analyser = context.createAnalyser();
+  src.connect(analyser);
+  analyser.connect(context.destination);
+}
+
+file.addEventListener('change', playMusic);
 
 const drawGrid = () => {
   context.clearRect(0, 0, canvas.width, canvas.height);
