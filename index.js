@@ -2,38 +2,15 @@ const canvas = document.querySelector('canvas');
 const context = canvas.getContext('2d');
 const canvasWidth = canvas.width;
 const canvasHeight = canvas.height;
-
-const file = document.getElementById('audioFile');
 const audio = document.getElementById('audio');
-
-// const playMusic = () => {
-//   audio.play();
-//   const context = new AudioContext();
-//   const src = context.createMediaElementSource(audio);
-//   const analyser = context.createAnalyser();
-//   src.connect(analyser);
-//   analyser.connect(context.destination);
-// }
-
-// file.addEventListener('change', playMusic);
-
 
 const audioCtx = new AudioContext();
 const analyser = audioCtx.createAnalyser();
-
-
-const audioFile = new Audio();
-audioFile.src = './music/cat.mp3';
-audioFile.autoplay = true;
-const audioSourceNode = audioCtx.createMediaElementSource(audioFile);
-
-
+const audioSourceNode = audioCtx.createMediaElementSource(audio);
 const bufferLength = analyser.frequencyBinCount;
 const dataArray = new Uint8Array(bufferLength);
 audioSourceNode.connect(analyser)
 analyser.connect(audioCtx.destination);
-
-context.clearRect(0, 0, canvasWidth, canvasHeight);
 
 const drawBoombox = () => {
   const drawVisual = requestAnimationFrame(drawBoombox);
