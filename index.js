@@ -23,7 +23,7 @@ const analyser = audioCtx.createAnalyser();
 
 
 const audioFile = new Audio();
-audioFile.src = './Music/believer.mp3';
+audioFile.src = './music/cat.mp3';
 audioFile.autoplay = true;
 const audioSourceNode = audioCtx.createMediaElementSource(audioFile);
 
