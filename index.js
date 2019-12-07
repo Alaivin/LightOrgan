@@ -24,8 +24,8 @@ const drawBoombox = () => {
   const barHeight = 50;
   let x = 5;
   const position = {
-    x: 10,
-    y: 10
+    x: 5,
+    y: 5
   };
 
   for (let i = 1; i < 144; i++) {
@@ -35,7 +35,7 @@ const drawBoombox = () => {
 
     if (i % 16 === 0) {
       position.y = position.y + barHeight + 5;
-      position.x = 10;
+      position.x = 5;
     };
 
     context.fillRect(position.x, position.y, barWidth, barHeight);
