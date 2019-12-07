@@ -1,7 +1,14 @@
-#audioFile {
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
 }
 
 #audio {
-  margin-left: 95px;
-  width: 245px;
+  margin-bottom: 20px;
 }
