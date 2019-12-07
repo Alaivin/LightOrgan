@@ -19,27 +19,29 @@ const drawBoombox = () => {
 
   context.fillStyle = 'rgb(0, 0, 0)';
   context.fillRect(0, 0, canvasWidth, canvasHeight);
-
-  const barWidth = 50;
-  const barHeight = 50;
-  let x = 5;
-  const position = {
-    x: 5,
-    y: 5
-  };
+  
+  const barData = {
+    positionX: 5,
+    positionY: 5,
+    width: 50,
+    height: 50,
+    gap: 5
+  }
 
   for (let i = 1; i < 144; i++) {
-    context.fillStyle = 'hsl(' + (i * 5) + ',' + (dataArray[i]) +'%' + ', 50%)';
+    context.fillStyle = 'hsl(' + (i * 5) + ',' + dataArray[i] +'%' + ', 50%)';
 
-    if (i === 16) context.fillRect(position.x, position.y, barWidth, barHeight);
+    if (i === 16) {
+      context.fillRect(barData.positionX, barData.positionY, barData.width, barData.height);
+    }
 
     if (i % 16 === 0) {
-      position.y = position.y + barHeight + 5;
-      position.x = 5;
+      barData.positionY = barData.positionY + barData.height + barData.gap;
+      barData.positionX = barData.gap;
     };
 
-    context.fillRect(position.x, position.y, barWidth, barHeight);
-    position.x += barWidth + 5;
+    context.fillRect(barData.positionX, barData.positionY, barData.width, barData.height);
+    barData.positionX += barData.width + barData.gap;
   };
 };
 
