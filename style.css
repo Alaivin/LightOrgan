@@ -1,12 +1,7 @@
 #audioFile {
-  position: relative;
-  bottom: 435px;
-  left: 5px;
 }
 
 #audio {
   margin-left: 95px;
-  position: relative;
-  bottom: 395px;
   width: 245px;
 }
