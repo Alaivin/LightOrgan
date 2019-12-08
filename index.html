@@ -9,8 +9,11 @@
 </head>
 <body>    
   <div class="wrapper">
-    <div class="controls">
-      <audio id="audio" class="audio" src="./music/cat.mp3" controls></audio>
+    <div class="controls-wrapper disable">
+      <div class="controls">
+        <audio id="audio" class="audio" src="./music/cat.mp3" controls></audio>
+      </div>
+      <h2 class="description">Press play button above</h2>
     </div>
     <form class="boombox-size">
       Bars in width (5-20):<br>
@@ -21,7 +24,9 @@
       <div class="error-box disable">Please enter correct number of bars</div>
       <br><br>
       <input class="submit" type="submit" value="Create your custom boombox size">
-    </form>
+    </form> 
+
+
     <canvas id="canvas" class="canvas" width="885" height="500"></canvas>
   </div>
   <script src="./index.js"></script>

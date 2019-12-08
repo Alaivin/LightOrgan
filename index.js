@@ -3,6 +3,7 @@ const widthBarsInput = document.getElementById('width-number');
 const heightBarsInput = document.getElementById('height-number');
 const boomboxSizeElement = document.getElementsByClassName('boombox-size')[0];
 const errorBox = document.getElementsByClassName('error-box')[0];
+const controlsWrapper = document.getElementsByClassName('controls-wrapper')[0];
 
 const getBarsNumbersValid = (widthNumber, heightNumber) => Number.isInteger(widthNumber) && Number.isInteger(heightNumber) && widthNumber > 4 && widthNumber < 21 && heightNumber > 4 && heightNumber < 21;
 
@@ -15,6 +16,7 @@ submitBoomboxSizeButton.addEventListener('click', event => {
     boomboxSizeElement.classList.add("disable");
     renderBoombox(widthNumber, heightNumber);
     errorBox.classList.add('disable');
+    controlsWrapper.classList.remove('disable');
   } else {
     errorBox.classList.remove('disable');
   };
