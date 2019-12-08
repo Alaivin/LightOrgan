@@ -12,6 +12,16 @@
     <div class="controls">
       <audio id="audio" class="audio" src="./music/cat.mp3" controls></audio>
     </div>
+    <form class="boombox-size">
+      Bars in width (5-20):<br>
+      <input type="text" id="width-number" name="width-number" value="16">
+      <br>
+      Bars in height (5-20):<br>
+      <input type="text" id="height-number" name="height-number" value="9">
+      <div class="error-box disable">Please enter correct number of bars</div>
+      <br><br>
+      <input class="submit" type="submit" value="Create your custom boombox size">
+    </form>
     <canvas id="canvas" class="canvas" width="885" height="500"></canvas>
   </div>
   <script src="./index.js"></script>
